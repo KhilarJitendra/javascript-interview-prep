@@ -1,7 +1,9 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "basics": "JavaScript Fundamentals",
+  "advanced": "JavaScript Advanced",
+  "techniques": "JavaScript Techniques",
+  "resources": "JavaScript Resources",
   "about": {
     "title": "About",
     "type": "page"
