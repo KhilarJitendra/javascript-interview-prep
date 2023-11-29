@@ -1,6 +1,190 @@
 ## E02
 
-- **Objects and methods**
-- **Strings and methods**
-- **Numbers and methods**
-- **Arrays and methods**
+## Common JavaScript Operators
+
+1. **Arithmetic Operators:**
+   - Addition: `+`
+   - Subtraction: `-`
+   - Multiplication: `*`
+   - Division: `/`
+   - Modulus (Remainder): `%`
+   - Increment: `++`
+   - Decrement: `--`
+
+2. **Assignment Operators:**
+   - Assignment: `=`
+   - Addition Assignment: `+=`
+   - Subtraction Assignment: `-=`
+   - Multiplication Assignment: `*=`
+   - Division Assignment: `/=`
+   - Modulus Assignment: `%=`
+
+3. **Comparison Operators:**
+   - Equal to: `==` or `===` (strict equality)
+   - Not equal to: `!=` or `!==` (strict inequality)
+   - Greater than: `>`
+   - Less than: `<`
+   - Greater than or equal to: `>=`
+   - Less than or equal to: `<=`
+
+4. **Logical Operators:**
+   - AND: `&&`
+   - OR: `||`
+   - NOT: `!`
+
+5. **Unary Operators:**
+   - Unary Plus: `+variable`
+   - Unary Minus: `-variable`
+   - Logical NOT: `!variable`
+
+6. **Conditional (Ternary) Operator:**
+   - `condition ? expr1 : expr2`
+
+7. **Bitwise Operators:**
+   - Bitwise AND: `&`
+   - Bitwise OR: `|`
+   - Bitwise XOR: `^`
+   - Bitwise NOT: `~`
+   - Left Shift: `<<`
+   - Right Shift: `>>`
+   - Zero-fill Right Shift: `>>>`
+
+
+
+## Data Types in JavaScript
+
+
+In JavaScript, data types are broadly categorized into two categories — primitive types and non-primitive types.
+
+Primitive data types are basic data types that represent a single value, whereas non-primitive data types are complex data types that represent a collection of values.
+
+Primitive data types are further classified into 7 types:
+
+- Number
+- String
+- BigInt
+- Boolean
+- Undefined
+- Null
+- Symbol
+- Object
+
+Some important data types - 
+
+- BigInt
+
+BigInts are typically used when dealing with very large integers that exceed the maximum safe integer value that JavaScript's regular Number type can represent. Here's an example where BigInts might be useful:
+
+```
+// Regular number can't represent this accurately
+const regularNumber = 900719925474099199999n; // Will lose precision
+
+// BigInt can accurately represent large integers
+const bigIntNumber = 900719925474099199999n;
+
+// Performing operations with BigInt
+const result = bigIntNumber * 2n;
+
+console.log(result); // Output: 1801439850948198399998n
+
+```
+In this example, regularNumber is a BigInt literal that exceeds the maximum safe integer value for regular JavaScript numbers. If you were to use a regular Number to represent this value, it would lose precision. However, by using the n suffix to create a BigInt, you can accurately represent and perform operations on very large integers.
+
+BigInts are particularly useful in scenarios such as cryptography, financial calculations, or any other domain where dealing with extremely large integer values is necessary. They provide a way to perform arithmetic operations on integers without worrying about precision loss due to the limitations of regular JavaScript numbers.
+
+
+- Undefined
+
+Undefined
+When a variable is declared but not assigned a value, its value is undefined. Undefined is also a data type in JavaScript that represents the absence of a value. For example:
+```
+let x;
+console.log(x); // Output: undefined
+```
+
+- Null
+
+The null data type represents the intentional absence of any object value. It is often used to signify that a variable has no value assigned to it. For example:
+```
+let y = null;
+console.log(y); // Output: null
+```
+- Symbol
+
+A symbol is a unique and immutable data type introduced in the ES6 version of javascript (ECMAScript 2015). It is used to store an anonymous and unique value. Symbols are typically used as property keys in objects to prevent naming conflicts.
+
+Symbols are often used as unique identifiers in scenarios where you want to avoid naming conflicts. Here's a real-life example:
+```
+// Creating symbols as unique identifiers for object properties
+const car1Make = Symbol('make');
+const car2Make = Symbol('make');
+
+let car1 = {
+  [car1Make]: 'Toyota',
+  model: 'Camry',
+  year: 2022,
+};
+
+let car2 = {
+  [car2Make]: 'Honda',
+  model: 'Accord',
+  year: 2022,
+};
+
+// Accessing properties using symbols
+console.log(car1[car1Make]); // Output: Toyota
+console.log(car2[car2Make]); // Output: Honda
+
+// Symbols prevent naming conflicts
+console.log(car1.make); // Output: undefined
+console.log(car2.make); // Output: undefined
+
+
+
+
+
+```
+
+
+- Object
+
+
+Objects are a non-primitive data type, which means that they are made up of other primitive and non-primitive data types, such as strings, numbers, arrays, functions, and even other objects.
+
+They are used to store collections of data, and can be created using the curly braces {} syntax. Objects can contain key-value pairs, where the keys are strings and the values can be any data type.
+
+Objects in JavaScript are similar to real-world objects in that they have properties and methods. Properties are like characteristics of an object, while methods are like actions that an object can perform. For example, a car object might have properties like make, model, and year, and methods like start and stop.
+
+```
+let car = {
+  make: "Toyota",
+  model: "Corolla",
+  year: 2022,
+  start: function() {
+    console.log("The car has started.");
+  },
+  stop: function() {
+    console.log("The car has stopped.");
+  }
+};
+```
+
+- Array
+
+Arrays are another common non-primitive data type in JavaScript that are used to store ordered collections of data in a single variable.
+
+They can be created using the square brackets [] syntax. Arrays can contain any data type, and the elements are indexed by number starting from 0.
+
+```
+let fruits = ["apple", "banana", 14, "orange", null];
+
+```
+- Date 
+
+Dates are a built-in non-primitive data type in JavaScript. They are used to represent dates and times, and can be created using the Date constructor. Dates have many built-in methods for working with dates and times.
+
+```
+let today = new Date();
+console.log(today.toLocaleString()); // outputs something like "3/4/2023, 2:25:30 PM"
+console.log(today.toDateString()); // outputs something like "Sat Mar 04 2023"
+```

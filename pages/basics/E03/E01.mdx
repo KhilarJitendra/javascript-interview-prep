@@ -1,0 +1,195 @@
+## E01
+
+### Javascript Objects
+
+
+When a JavaScript variable is declared with the keyword "new", the variable is created as an object:
+
+
+In JavaScript, almost "everything" is an object.
+
+Booleans can be objects (if defined with the new keyword)
+Numbers can be objects (if defined with the new keyword)
+Strings can be objects (if defined with the new keyword)
+Dates are always objects
+Maths are always objects
+Regular expressions are always objects
+Arrays are always objects
+Functions are always objects
+Objects are always objects
+
+
+There are different ways to create new objects:
+
+Create a single object, using an object literal. - recommended
+Create a single object, with the keyword new.
+Define an object constructor, and then create objects of the constructed type.
+Create an object using Object.create().
+
+* Why 'this' key word - 
+ In JavaScript, the this keyword is used to refer to the current execution context within which a function is invoked.
+ this is not a variable. It is a keyword. You cannot change the value of this.
+
+In JavaScript, the this keyword refers to an object.
+
+Which object depends on how this is being invoked (used or called).
+
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+
+#### Using Object.values():
+
+```
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+const myArray = Object.values(person); // give array of [ 'John', 30, 'New York' ]
+
+```
+
+```
+
+The result will be a string following the JSON notation:
+
+{"name":"John","age":50,"city":"New York"}
+
+
+```
+
+#### Object.defineProperty()
+
+The Object.defineProperty() method can also be used to add Getters and Setters:
+
+### JavaScript Object Constructors :
+
+It is considered good practice to name constructor functions with an upper-case first letter.
+In a constructor function this does not have a value. It is a substitute for the new object. The value of this will become the new object when a new object is created.
+
+```
+function Person(fn,ln,isFE) {
+    this.firstName = fn,
+    this.lastName = "ln",
+    this.isFE = "isFE"
+}
+
+const obj1 = new Person('Jitendra','Khilar',true);
+console.log(obj1);
+
+```
+
+### JavaScript Object Prototypes :
+
+All JavaScript objects inherit properties and methods from a prototype.We can not add a new property to an existing object constructor .
+
+### Prototype Inheritance :
+
+Date objects inherit from Date.prototype
+Array objects inherit from Array.prototype
+
+We can add custom add Person.prototype
+
+```
+function Person(first, last, age, eyecolor) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eyecolor;
+}
+
+Person.prototype.nationality = "English";
+```
+
+### JavaScript Iterables :
+
+Iterable objects are objects that can be iterated over with for..of.
+
+Technically, iterables must implement the Symbol.iterator method.
+
+You can use a for..of loop to iterate over the elements of a string and array nor for Object (for in);
+
+### JavaScript Iterators :
+
+### JavaScript ES5 Object Methods :
+
+** Object.keys(object)
+
+```
+const obj = {
+    name: 'Jitendra',
+    lastName: 'Khilar'
+}
+
+console.log(Object.keys(obj)) // [ 'name', 'lastName' ]
+
+```
+
+// Create object with an existing object as prototype
+Object.create()
+
+// Adding or changing an object property
+Object.defineProperty(object, property, descriptor)
+
+// Adding or changing object properties
+Object.defineProperties(object, descriptors)
+
+// Accessing Properties
+Object.getOwnPropertyDescriptor(object, property)
+
+// Returns all properties as an array
+Object.getOwnPropertyNames(object)
+
+// Accessing the prototype
+Object.getPrototypeOf(object)
+
+// Returns enumerable properties as an array
+Object.keys(object)
+
+// Prevents adding properties to an object
+Object.preventExtensions(object)
+
+// Returns true if properties can be added to an object
+Object.isExtensible(object)
+
+// Prevents changes of object properties (not values)
+Object.seal(object)
+
+// Returns true if object is sealed
+Object.isSealed(object)
+
+// Prevents any changes to an object
+Object.freeze(object)
+
+// Returns true if object is frozen
+Object.isFrozen(object)
+
+
+//
+```
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  language : "EN"
+};
+
+// Change a property
+Object.defineProperty(person, "language", {value : "NO"});
+```
+
+```
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  language : "EN"
+};
+
+Object.defineProperty(person, "language", {enumerable:false});
+Object.getOwnPropertyNames(person);  // Returns an array of properties
+```
