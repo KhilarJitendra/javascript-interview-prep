@@ -4,4 +4,56 @@
 
 - **Callbacks**
 - **Promises**
+
+
+## Promises in JavaScript
+
+Promises are a powerful and flexible mechanism for handling asynchronous operations. They provide a cleaner and more structured way to work with asynchronous code compared to traditional callback functions.
+
+A promise represents the eventual completion or failure of an asynchronous operation and can be in one of three states:
+
+- **Pending:** The initial state. The promise is neither fulfilled nor rejected.
+
+- **Fulfilled:** The operation completed successfully, and the promise has a resulting value.
+
+- **Rejected:** The operation failed, and the promise has a reason for the failure.
+
+
+- The Promise object supports two properties: state and result.
+
+- You cannot access the Promise properties state and result.
+
+- You must use a Promise method to handle promises. So 
+
+- Promise.then() takes two arguments, a callback for success and another for failure.
+
+  Both are optional, so you can add a callback for success or failure only.
+
+
+  ```
+
+    const dataFetch = new Promise(function (res,rej) {
+
+
+        if(true) {
+            res("OK");
+        }
+        else {
+            rej("err")
+        }
+
+    });
+
+    console.log(dataFetch.then( () => {
+        console.log('fullfilled')
+    }, () => {
+        console.log("error")
+    }))
+
+
+
+  ```
+
+
+
 - **Async/Await**

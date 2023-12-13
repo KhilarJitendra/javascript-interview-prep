@@ -1,3 +1,80 @@
 ## E07
 
 ## JavaScript Regular Expressions
+
+Regular expressions, often abbreviated as regex or regexp, are powerful tools for pattern matching and manipulating strings in JavaScript. They provide a concise way to define patterns that can be used for tasks like searching, validating, and replacing text.
+
+## Basics of Regular Expressions
+
+In JavaScript, regular expressions can be created using the `RegExp` constructor or regular expression literals:
+
+```javascript
+// Using RegExp constructor
+const regex1 = new RegExp('pattern');
+
+// Using regular expression literal
+const regex2 = /pattern/;
+
+```
+
+
+Some pattens and methods :
+
+`test()`
+`exec()`
+`match()`
+`search()`
+`replace()`
+
+```
+const pattern = /abc/;
+const result = pattern.test('abc123'); // Returns true
+
+const pattern = /abc/;
+const result = pattern.exec('abc123'); // Returns ['abc', index: 0, input: 'abc123', groups: undefined]
+
+const pattern = /\d+/;
+const result = 'abc123'.match(pattern); // Returns ['123']
+
+const pattern = /abc/;
+const result = 'xyzabc'.search(pattern); // Returns 3
+
+const pattern = /abc/;
+const result = 'abc123'.replace(pattern, 'XYZ'); // Returns 'XYZ123'
+
+
+```
+
+
+```
+
+Patterns - 
+
+Forward Slash /:
+
+Delimiter used to mark the beginning and end of a regular expression.
+const pattern = /abc/;
+
+Backslash \:
+
+Escape character used to treat the next character as a literal character.
+const pattern = /a\+/; // Matches 'a' followed by '+'
+
+Square Brackets []:
+
+Character class, matches any one of the characters inside the brackets.
+const patternVowel = /[aeiou]/; // Matches any vowel
+const patternNotDigit = /[^0-9]/; // Matches any non-digit
+
+aret ^ (Inside Square Brackets):
+
+Negates the character class, matches any character not listed.
+const patternNotVowel = /[^aeiou]/; // Matches any non-vowel
+
+Asterisk *:
+
+Quantifier, matches zero or more occurrences of the preceding character or group.
+const patternZeroOrMoreA = /a*/; // Matches zero or more 'a's
+
+
+```

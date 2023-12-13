@@ -2,8 +2,66 @@
 
 ### Data Structures
 
-- **Iterables**
 - **Sets**
+
+    Removing Duplicates from Arrays:
+
+    ```
+
+    const data = new Set([1,2,3,4,5,1,1,1,1,2,6,6]);
+    data.add(9)
+    
+
+    console.log('Data ',data.values())
+
+
+    const array = ["12","13","14"];
+
+    for(const key of array){
+        console.log(array[key])
+    }
+
+
+    ```
+
+
 - **Maps**
-- **typeof**
-- **Type Conversion**
+
+
+
+In JavaScript, a Map is a built-in object that allows you to store key-value pairs where both the keys and the values can be of any data type. Unlike objects, where keys are limited to strings or symbols, Map allows you to use any data type as a key, including objects, functions, and primitive data types.
+
+
+Use cases such as - Caching and Memoization:
+
+```
+
+// Create a Map to serve as the cache
+const cache = new Map();
+
+// Function to perform an expensive operation
+function expensiveOperation(param) {
+  // Check if the result is already in the cache
+  if (cache.has(param)) {
+    console.log(`Fetching result from cache for param: ${param}`);
+    return cache.get(param);
+  }
+
+  // If not in cache, perform the expensive operation
+  console.log(`Performing expensive operation for param: ${param}`);
+  const result = param * 2;
+
+  // Cache the result for future use
+  cache.set(param, result);
+
+  return result;
+}
+
+// Test the expensive operation with memoization
+console.log(expensiveOperation(5));  // Logs: Performing expensive operation for param: 5
+console.log(expensiveOperation(5));  // Logs: Fetching result from cache for param: 5
+console.log(expensiveOperation(10)); // Logs: Performing expensive operation for param: 10
+console.log(expensiveOperation(10)); // Logs: Fetching result from cache for param: 10
+
+
+```

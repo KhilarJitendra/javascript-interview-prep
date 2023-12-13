@@ -3,6 +3,61 @@
 ## Error Handling
 
 - **Errors**
+
+
+```
+
+function divide(a, b) {
+  try {
+    if (b === 0) {
+      throw new Error("Division by zero is not allowed.");
+    }
+
+    const result = a / b;
+    return result;
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    // You can handle the error here or rethrow it if needed
+    throw error;
+  }
+}
+
+// Example usage
+try {
+  const result1 = divide(10, 2);
+  console.log(result1); // 5
+
+  const result2 = divide(8, 0); // This will throw an error
+  console.log(result2); // This line won't be executed
+} catch (error) {
+  console.error("An error occurred:", error.message);
+}
+
+```
+
 - **Scope**
+
+    - Global Scope (use for eg - const API_BASE_URL = 'https://api.example.com' or const windowHeight = window.innerHeight;)
+    - Functional Scope - (access within function let const & var)
+    - Block Scope - (for let and const)
+    - Using strict mode is generally considered good practice, and modern JavaScript development often involves writing code in strict mode to catch and prevent common mistakes early in the development process.
+
+```
+
+// Global strict mode
+'use strict';
+
+function myFunction() {
+  // Function-level strict mode
+  'use strict';
+  // Function code...
+}
+
+
+```
+
+
 - **Hoisting**
-- **Use Strict**
+
+    Ref - https://www.geeksforgeeks.org/javascript-hoisting/
+

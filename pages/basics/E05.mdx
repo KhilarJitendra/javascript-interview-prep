@@ -5,9 +5,107 @@
 - **If-Else**
 - **Switch**
 
+    Real Life ex - Switch statements are particularly handy when you have a limited number of discrete values to compare and can provide a cleaner and more efficient alternative to multiple if-else conditions.
+
+
+     ```
+
+
+    const role = "TDM2";
+
+    let accesMessage = '';
+
+
+    switch(role) {
+        case "admin" :
+            accesMessage = "You will have fulll access";
+            break
+        case "developer" :
+            accesMessage = "You will have access only to dev mode";
+            break
+        case "TDM" :
+            accesMessage = "You will have access only to project";
+            break
+        default : 
+            accesMessage = "You will have read access";
+    }
+
+
+    console.log('Message',accesMessage)
+
+
+     ```
+
+- **While Loop**
+
+Real-Life Example: User Authentication
+
+Imagine you are implementing a user authentication system for a web application. You might use a while loop to repeatedly prompt the user for their credentials until they enter valid information. The switch statement can be employed to handle different scenarios based on the user input.
+
+Here's a simplified JavaScript example:
+
+```
+
+let isAuthenticated = false;
+    let attempts = 3;
+
+    while(attempts > 0 && !isAuthenticated) {
+
+        const username = prompt('Enter your user name:');
+        const password = prompt('Enter your password:');
+
+
+
+        switch (true) {
+            case username === "admin" && password === "admin" :
+                isAuthenticated = true;
+                alert('You have sucessfully logged in as admin');
+                break;
+            case username === "user" && password === "user" :
+                isAuthenticated = true;
+                alert("You have sucessfully logged in as user");
+                break;
+            default :
+                attempts = attempts - 1;
+                console.log('Invalid creds, no of attempts left',attempts)
+        }
+    }
+
+
+    if(!isAuthenticated) {
+        console.log('SITE BLOCKED..',attempts);
+    }
+
+
+
+
+
+```
+
+
+
+
 ### Loops
 
 - **For-In**
+
+Use for...in for iterating over the properties of an object.
+
+```
+for (let key in object) {
+    // code to execute
+}
+```
+
 - **For-Of**
-- **While Loop**
-- **Break**
+
+
+Use for...of for iterating over the values of an iterable (like arrays, strings, maps, 
+
+```
+
+for (let element of iterable) {
+    // code to execute
+}
+
+```
